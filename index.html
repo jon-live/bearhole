@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bear Hole — Rooms for Rent</title>
+  <meta name="description" content="Warm, cozy rooms for rent in a comfortable shared home. View rooms, prices, photos and floor plan." />
+
+  <!-- Fonts: Fraunces (soft serif headings) + Nunito (rounded body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" data-brand></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#shared">Shared spaces</a>
+        <a href="#floorplan">Floor plan</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" data-hero-bg></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-location></p>
+      <h1 class="hero__title" data-house-name></h1>
+      <p class="hero__tagline" data-tagline></p>
+      <div class="hero__actions">
+        <a href="#rooms" class="btn btn--primary">View rooms</a>
+        <a href="#contact" class="btn btn--ghost">Contact me</a>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">↓</a>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div class="about__text">
+        <h2 class="section__title" data-about-heading></h2>
+        <p class="about__lead" data-about-text></p>
+      </div>
+      <ul class="about__highlights" data-highlights></ul>
+    </div>
+  </section>
+
+  <!-- ===== Rooms ===== -->
+  <section class="section section--alt rooms" id="rooms">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Choose your space</p>
+        <h2 class="section__title">The rooms</h2>
+      </header>
+      <div class="rooms__grid" data-rooms></div>
+    </div>
+  </section>
+
+  <!-- ===== Shared spaces ===== -->
+  <section class="section shared" id="shared">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Together</p>
+        <h2 class="section__title" data-shared-heading></h2>
+        <p class="section__sub" data-shared-text></p>
+      </header>
+      <div class="shared__grid" data-shared></div>
+    </div>
+  </section>
+
+  <!-- ===== Floor plan ===== -->
+  <section class="section section--alt floorplan" id="floorplan">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__eyebrow">Layout</p>
+        <h2 class="section__title" data-floorplan-heading></h2>
+        <p class="section__sub" data-floorplan-text></p>
+      </header>
+      <div class="floorplan__frame" data-floorplan></div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section contact" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__intro">
+        <h2 class="section__title" data-contact-heading></h2>
+        <p class="section__sub" data-contact-text></p>
+        <div class="contact__direct" data-contact-direct></div>
+      </div>
+      <form class="contact__form" id="contactForm" data-contact-form>
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" required placeholder="Jane Doe" />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="you@email.com" />
+        </label>
+        <label>
+          <span>Which room?</span>
+          <input type="text" name="room" placeholder="e.g. The Sunrise Room" />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required placeholder="Hi! I'd love to know more about…"></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">Send message</button>
+        <p class="contact__status" data-form-status></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span data-footer-name></span>
+      <span class="footer__muted">© <span data-year></span> · Made with care</span>
+    </div>
+  </footer>
+
+  <!-- ===== Lightbox (photos / video) ===== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" data-lb-close aria-label="Close">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" data-lb-prev aria-label="Previous">‹</button>
+    <div class="lightbox__stage" data-lb-stage></div>
+    <button class="lightbox__nav lightbox__nav--next" data-lb-next aria-label="Next">›</button>
+    <div class="lightbox__caption" data-lb-caption></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

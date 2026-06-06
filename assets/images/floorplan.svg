@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="800" viewBox="0 0 1100 800">
+  <rect width="1100" height="800" fill="#FBF6EE"/>
+  <g fill="none" stroke="#3A312A" stroke-width="6">
+    <rect x="80" y="80" width="940" height="640"/>
+    <!-- internal walls -->
+    <line x1="500" y1="80" x2="500" y2="420"/>
+    <line x1="80" y1="420" x2="700" y2="420"/>
+    <line x1="700" y1="80" x2="700" y2="720"/>
+    <line x1="500" y1="250" x2="700" y2="250"/>
+  </g>
+  <g font-family="Helvetica, sans-serif" fill="#7C6F60" font-size="30" text-anchor="middle">
+    <text x="290" y="260">Sunrise Room</text>
+    <text x="600" y="175">Garden Room</text>
+    <text x="600" y="345">Loft Room</text>
+    <text x="290" y="580">Living room</text>
+    <text x="600" y="580">Kitchen</text>
+    <text x="860" y="400">Hallway</text>
+  </g>
+  <g font-family="Georgia, serif" fill="#C36A45" font-size="26">
+    <text x="80" y="60">Floor plan — replace with assets/images/floorplan.png</text>
+  </g>
+</svg>

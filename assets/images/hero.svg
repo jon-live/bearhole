@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E9C9A3"/>
+      <stop offset="1" stop-color="#D89A6A"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B98A5E"/>
+      <stop offset="1" stop-color="#7E5A39"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1230" cy="240" r="90" fill="#F6E2C2" opacity="0.85"/>
+  <!-- hills -->
+  <path d="M0 720 Q400 600 800 700 T1600 690 V1000 H0 Z" fill="#C79768" opacity="0.8"/>
+  <path d="M0 800 Q500 700 1000 790 T1600 770 V1000 H0 Z" fill="url(#ground)"/>
+  <!-- house -->
+  <g transform="translate(560 430)">
+    <polygon points="240,0 480,180 0,180" fill="#9A5536"/>
+    <rect x="60" y="180" width="360" height="240" fill="#C8744F"/>
+    <rect x="200" y="300" width="80" height="120" fill="#6E3E26"/>
+    <rect x="110" y="230" width="70" height="70" fill="#F6E2C2"/>
+    <rect x="300" y="230" width="70" height="70" fill="#F6E2C2"/>
+    <rect x="350" y="40" width="44" height="90" fill="#7E4630"/>
+  </g>
+  <!-- trees -->
+  <g transform="translate(330 560)"><rect x="-12" y="80" width="24" height="90" fill="#6E4A2E"/><circle cx="0" cy="50" r="80" fill="#6E8B57"/></g>
+  <g transform="translate(1240 600)"><rect x="-10" y="70" width="20" height="80" fill="#6E4A2E"/><circle cx="0" cy="40" r="64" fill="#5E7C4B"/></g>
+  <text x="800" y="950" font-family="Georgia, serif" font-size="38" fill="#FBF6EE" text-anchor="middle" opacity="0.85">Replace with your hero photo · assets/images/hero.jpg</text>
+</svg>
