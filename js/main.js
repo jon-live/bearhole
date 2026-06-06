@@ -41,9 +41,7 @@
   }
 
   /* ---------- Rooms ---------- */
-  function renderRooms() {
-    const wrap = $("[data-rooms]");
-    wrap.innerHTML = SITE.rooms.map((room, i) => {
+  function roomCard(room, i) {
       const available = (room.status || "").toLowerCase() !== "rented";
       const badge = available
         ? `<span class="room__badge room__badge--available">Available</span>`
@@ -82,6 +80,27 @@
           </div>
         </div>
       </article>`;
+  }
+
+  function renderRooms() {
+    const wrap = $("[data-rooms]");
+
+    // Group rooms by floor, then show floors in ascending order (Floor 1 first).
+    const floors = {};
+    SITE.rooms.forEach((room, i) => {
+      const f = room.floor != null ? room.floor : "";
+      (floors[f] = floors[f] || []).push({ room, i });
+    });
+    const floorKeys = Object.keys(floors).sort((a, b) => Number(a) - Number(b));
+
+    wrap.innerHTML = floorKeys.map((f) => {
+      const cards = floors[f].map(({ room, i }) => roomCard(room, i)).join("");
+      const heading = f === "" ? "" :
+        `<div class="rooms__floor-head">
+           <h3 class="rooms__floor-title">Floor ${esc(f)}</h3>
+           <span class="rooms__floor-count">${floors[f].length} rooms</span>
+         </div>`;
+      return `<div class="rooms__floor" data-reveal>${heading}<div class="rooms__grid">${cards}</div></div>`;
     }).join("");
 
     // gallery openers

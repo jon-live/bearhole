@@ -31,13 +31,15 @@ const SITE = {
 
   /* ---- ROOMS ----
      Add or remove rooms by copying a { ... } block.
+     - floor: which floor the room is on (rooms are grouped by floor)
      - price / period: shown like "$650 / month"
      - status: "available" or "rented"
      - photos: list of image files (first one is the cover)
      - video: a file path OR a YouTube link OR "" for none           */
   rooms: [
     {
-      name: "The Sunrise Room",
+      name: "Room 1",
+      floor: 2,
       price: "$650",
       period: "/ month",
       status: "available",
@@ -46,7 +48,7 @@ const SITE = {
       description:
         "Bright corner room with morning sun, a large wardrobe and a cozy " +
         "reading nook by the window.",
-      features: ["Private balcony", "Double bed", "Work desk", "Wardrobe"],
+      features: ["Double bed", "Work desk", "Wardrobe", "Lots of light"],
       photos: [
         "assets/images/rooms/room-1.svg",
         "assets/images/rooms/room-1.svg",
@@ -54,8 +56,9 @@ const SITE = {
       video: "", // e.g. "https://www.youtube.com/watch?v=XXXX" or "assets/videos/room1.mp4"
     },
     {
-      name: "The Garden Room",
-      price: "$580",
+      name: "Room 2",
+      floor: 2,
+      price: "$620",
       period: "/ month",
       status: "available",
       size: "12 m²",
@@ -71,19 +74,74 @@ const SITE = {
       video: "",
     },
     {
-      name: "The Loft Room",
-      price: "$720",
+      name: "Room 3",
+      floor: 2,
+      price: "$680",
       period: "/ month",
-      status: "rented",
-      size: "18 m²",
-      beds: "1 queen bed",
+      status: "available",
+      size: "15 m²",
+      beds: "1 double bed",
       description:
-        "Spacious upstairs room with sloped ceilings, extra storage and an " +
-        "en-suite bathroom.",
-      features: ["En-suite bathroom", "Queen bed", "Extra storage", "Skylight"],
+        "Comfortable room with a generous wardrobe and a dedicated study " +
+        "corner — great for working from home.",
+      features: ["Double bed", "Study corner", "Wardrobe"],
       photos: [
         "assets/images/rooms/room-3.svg",
         "assets/images/rooms/room-3.svg",
+      ],
+      video: "",
+    },
+    {
+      name: "Room 4",
+      floor: 2,
+      price: "$640",
+      period: "/ month",
+      status: "rented",
+      size: "13 m²",
+      beds: "1 single bed",
+      description:
+        "Cozy upstairs room with sloped ceilings and a skylight — peaceful " +
+        "and full of character.",
+      features: ["Skylight", "Single bed", "Extra storage"],
+      photos: [
+        "assets/images/rooms/room-4.svg",
+        "assets/images/rooms/room-4.svg",
+      ],
+      video: "",
+    },
+    {
+      name: "Room 5",
+      floor: 1,
+      price: "$720",
+      period: "/ month",
+      status: "available",
+      size: "18 m²",
+      beds: "1 queen bed",
+      description:
+        "Spacious ground-floor room with an en-suite bathroom and direct " +
+        "access to the garden.",
+      features: ["En-suite bathroom", "Queen bed", "Garden access"],
+      photos: [
+        "assets/images/rooms/room-5.svg",
+        "assets/images/rooms/room-5.svg",
+      ],
+      video: "",
+    },
+    {
+      name: "Room 6",
+      floor: 1,
+      price: "$590",
+      period: "/ month",
+      status: "available",
+      size: "12 m²",
+      beds: "1 single bed",
+      description:
+        "Snug ground-floor room close to the kitchen and living room — " +
+        "convenient and easy to settle into.",
+      features: ["Single bed", "Near kitchen", "Wardrobe"],
+      photos: [
+        "assets/images/rooms/room-6.svg",
+        "assets/images/rooms/room-6.svg",
       ],
       video: "",
     },
