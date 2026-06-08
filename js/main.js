@@ -42,11 +42,30 @@
 
   /* ---------- Rooms ---------- */
   function roomCard(room, i) {
-      const available = (room.status || "").toLowerCase() !== "rented";
+      const status = (room.status || "").toLowerCase();
+      const cover = (room.photos && room.photos[0]) || "";
+
+      // Unavailable: greyed out, no price/details, not clickable.
+      if (status === "unavailable") {
+        return `
+        <article class="room room--unavailable">
+          <div class="room__media">
+            <span class="room__badge room__badge--unavailable">Not available</span>
+            <img src="${esc(cover)}" alt="${esc(room.name)}" loading="lazy" />
+          </div>
+          <div class="room__body">
+            <div class="room__top">
+              <h3 class="room__name">${esc(room.name)}</h3>
+            </div>
+            <p class="room__desc">This room is currently not available.</p>
+          </div>
+        </article>`;
+      }
+
+      const available = status !== "rented";
       const badge = available
         ? `<span class="room__badge room__badge--available">Available</span>`
         : `<span class="room__badge room__badge--rented">Rented</span>`;
-      const cover = (room.photos && room.photos[0]) || "";
       const features = (room.features || [])
         .map((f) => `<li>${esc(f)}</li>`).join("");
       const photoCount = (room.photos || []).length;
