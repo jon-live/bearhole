@@ -219,20 +219,20 @@
       status.textContent = "";
 
       if (!hasFormspree) {
-        // Fallback: open the visitor's email client with a prefilled message.
+        // Open the Gmail web composer with the message prefilled.
         const fd = new FormData(form);
         const subject = encodeURIComponent(`Room enquiry — ${fd.get("room") || SITE.houseName}`);
         const body = encodeURIComponent(
           `Name: ${fd.get("name")}\nEmail: ${fd.get("email")}\nRoom: ${fd.get("room")}\n\n${fd.get("message")}`
         );
-        // Gmail web composer link — for visitors with no default mail app.
         const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
           encodeURIComponent(c.email) + "&su=" + subject + "&body=" + body;
-        // Primary: hand off to the default mail app (does not navigate away).
-        window.location.href = `mailto:${c.email}?subject=${subject}&body=${body}`;
+        const mailtoUrl = `mailto:${c.email}?subject=${subject}&body=${body}`;
+        // Primary: Gmail composer in a new tab.
+        window.open(gmailUrl, "_blank", "noopener");
         status.classList.add("is-ok");
-        status.innerHTML = "Opening your email app with your message ready to send… " +
-          `Nothing happened? <a href="${gmailUrl}" target="_blank" rel="noopener">Compose in Gmail instead</a>.`;
+        status.innerHTML = "Opening Gmail with your message ready to send… " +
+          `Prefer your own email app? <a href="${mailtoUrl}">Open it instead</a>.`;
         return;
       }
 
