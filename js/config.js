@@ -171,7 +171,11 @@ const SITE = {
     text:
       "Interested in a room or have a question? Send me a message and I'll " +
       "get back to you soon.",
-    email: "lee.leon0519@gmail.com",
+    // Where the contact form sends to. This address is NOT shown on the page —
+    // visitors reach you only through the form (it opens their mail app
+    // pre-filled and addressed here).
+    email: "sepahope@berkeley.edu",
+    showEmailLink: false, // set true to also display the email address on the page
     phone: "", // optional, e.g. "+1 555 123 4567" — leave "" to hide
     // To make the form actually send email, create a free form at
     // https://formspree.io and paste your form ID here (looks like "xayzwkdb").

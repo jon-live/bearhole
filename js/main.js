@@ -177,7 +177,7 @@
     const c = SITE.contact;
     const direct = $("[data-contact-direct]");
     let html = "";
-    if (c.email) {
+    if (c.email && c.showEmailLink) {
       html += `<a href="mailto:${esc(c.email)}"><span class="ico">✉</span>${esc(c.email)}</a>`;
     }
     if (c.phone) {
@@ -205,7 +205,7 @@
         );
         window.location.href = `mailto:${c.email}?subject=${subject}&body=${body}`;
         status.classList.add("is-ok");
-        status.textContent = "Opening your email app… If nothing happens, email me directly above.";
+        status.textContent = "Opening your email app with your message ready to send…";
         return;
       }
 
