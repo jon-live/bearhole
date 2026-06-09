@@ -40,7 +40,7 @@ const SITE = {
     {
       name: "Room 1",
       floor: 2,
-      price: "$650",
+      price: "$1,650",
       period: "/ month",
       status: "available",
       size: "14 m²",
@@ -58,7 +58,7 @@ const SITE = {
     {
       name: "Room 2",
       floor: 2,
-      price: "$620",
+      price: "$1,450",
       period: "/ month",
       status: "available",
       size: "12 m²",
@@ -76,7 +76,7 @@ const SITE = {
     {
       name: "Room 3",
       floor: 2,
-      price: "$680",
+      price: "$1,650",
       period: "/ month",
       status: "available",
       size: "15 m²",
@@ -94,7 +94,7 @@ const SITE = {
     {
       name: "Room 4",
       floor: 2,
-      price: "$640",
+      price: "$1,450",
       period: "/ month",
       status: "rented",
       size: "13 m²",
@@ -112,7 +112,7 @@ const SITE = {
     {
       name: "Room 5",
       floor: 1,
-      price: "$720",
+      price: "$1,450",
       period: "/ month",
       status: "available",
       size: "18 m²",
