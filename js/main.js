@@ -178,13 +178,35 @@
     const direct = $("[data-contact-direct]");
     let html = "";
     if (c.email && c.showEmailLink) {
-      html += `<a href="mailto:${esc(c.email)}"><span class="ico">✉</span>${esc(c.email)}</a>`;
+      html += `<div class="contact__row">
+          <a href="mailto:${esc(c.email)}"><span class="ico">✉</span>${esc(c.email)}</a>
+          <button type="button" class="contact__copy" data-copy="${esc(c.email)}" title="Copy email">Copy</button>
+        </div>`;
     }
     if (c.phone) {
       const tel = c.phone.replace(/[^\d+]/g, "");
       html += `<a href="tel:${esc(tel)}"><span class="ico">☎</span>${esc(c.phone)}</a>`;
     }
     direct.innerHTML = html;
+
+    // Copy-to-clipboard for the email address.
+    $$("[data-copy]", direct).forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const value = btn.getAttribute("data-copy");
+        try {
+          await navigator.clipboard.writeText(value);
+        } catch (e) {
+          const t = document.createElement("textarea");
+          t.value = value; document.body.appendChild(t); t.select();
+          try { document.execCommand("copy"); } catch (_) {}
+          document.body.removeChild(t);
+        }
+        const old = btn.textContent;
+        btn.textContent = "Copied!";
+        btn.classList.add("is-copied");
+        setTimeout(() => { btn.textContent = old; btn.classList.remove("is-copied"); }, 1600);
+      });
+    });
 
     const form = $("#contactForm");
     const status = $("[data-form-status]");
@@ -197,15 +219,20 @@
       status.textContent = "";
 
       if (!hasFormspree) {
-        // Fallback: open the user's email client with a prefilled message.
+        // Fallback: open the visitor's email client with a prefilled message.
         const fd = new FormData(form);
         const subject = encodeURIComponent(`Room enquiry — ${fd.get("room") || SITE.houseName}`);
         const body = encodeURIComponent(
           `Name: ${fd.get("name")}\nEmail: ${fd.get("email")}\nRoom: ${fd.get("room")}\n\n${fd.get("message")}`
         );
+        // Gmail web composer link — for visitors with no default mail app.
+        const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+          encodeURIComponent(c.email) + "&su=" + subject + "&body=" + body;
+        // Primary: hand off to the default mail app (does not navigate away).
         window.location.href = `mailto:${c.email}?subject=${subject}&body=${body}`;
         status.classList.add("is-ok");
-        status.textContent = "Opening your email app with your message ready to send…";
+        status.innerHTML = "Opening your email app with your message ready to send… " +
+          `Nothing happened? <a href="${gmailUrl}" target="_blank" rel="noopener">Compose in Gmail instead</a>.`;
         return;
       }
 
