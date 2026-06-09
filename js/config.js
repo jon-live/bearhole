@@ -96,7 +96,7 @@ const SITE = {
       floor: 2,
       price: "$1,450",
       period: "/ month",
-      status: "rented",
+      status: "available",
       size: "13 m²",
       beds: "1 single bed",
       description:
@@ -130,10 +130,17 @@ const SITE = {
     {
       name: "Room 6",
       floor: 1,
-      // status "unavailable" greys the card out, hides the price, and makes it
-      // non-clickable. Set back to "available" (and restore price) to list it.
-      status: "unavailable",
+      price: "$1,450",
+      period: "/ month",
+      status: "rented",
+      size: "12 m²",
+      beds: "1 single bed",
+      description:
+        "Snug ground-floor room close to the kitchen and living room — " +
+        "convenient and easy to settle into.",
+      features: ["Single bed", "Near kitchen", "Wardrobe"],
       photos: [
+        "assets/images/rooms/room-6.svg",
         "assets/images/rooms/room-6.svg",
       ],
       video: "",
