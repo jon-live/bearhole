@@ -6,7 +6,7 @@
 
 const SITE = {
   /* ---- Top of the page ---- */
-  houseName: "Bear Hole",
+  houseName: "Cedar Home",
   tagline: "A warm, cozy home — rooms for rent",
   location: "Your City, Country",
   heroImage: "assets/images/hero.svg", // replace with assets/images/hero.jpg
