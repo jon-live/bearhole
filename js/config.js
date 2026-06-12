@@ -79,8 +79,8 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
-        "Comfortable room with a generous wardrobe and a dedicated study " +
-        "corner — great for working from home.",
+        "Huge room with a wardrobe and an enclosed studio for additional " +
+        "working or meditation space.",
       features: ["Double bed", "Study corner", "Wardrobe"],
       photos: [
         "assets/images/rooms/room-3.svg",
@@ -96,8 +96,7 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
-        "Cozy upstairs room with sloped ceilings and a skylight — peaceful " +
-        "and full of character.",
+        "Cozy upstairs room with wardrobe and huge windows for great value.",
       features: ["Skylight", "Single bed", "Extra storage"],
       photos: [
         "assets/images/rooms/room-4.svg",
