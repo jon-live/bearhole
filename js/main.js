@@ -73,6 +73,9 @@
         ? `<span class="room__gallery-hint">⊞ ${photoCount} photos</span>` : "";
       const videoBtn = room.video
         ? `<button class="room__btn room__btn--solid" data-video="${i}">Video</button>` : "";
+      const enquireBtn = available
+        ? `<a class="room__btn ${videoBtn ? "" : "room__btn--solid"}" href="#contact" data-enquire="${esc(room.name)}">Enquire</a>`
+        : `<button class="room__btn room__btn--disabled" disabled aria-disabled="true">Enquire</button>`;
 
       return `
       <article class="room" data-reveal>
@@ -95,7 +98,7 @@
           <div class="room__actions">
             <button class="room__btn" data-room-gallery="${i}">Photos</button>
             ${videoBtn}
-            <a class="room__btn ${videoBtn ? "" : "room__btn--solid"}" href="#contact" data-enquire="${esc(room.name)}">Enquire</a>
+            ${enquireBtn}
           </div>
         </div>
       </article>`;

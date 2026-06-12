@@ -184,6 +184,11 @@ a { color: inherit; text-decoration: none; }
 .room__btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
 .room__btn--solid { background: var(--terracotta); border-color: var(--terracotta); color: #fff; }
 .room__btn--solid:hover { background: var(--terracotta-dark); border-color: var(--terracotta-dark); color: #fff; }
+.room__btn--disabled, .room__btn:disabled {
+  background: var(--beige-soft); border-color: var(--line); color: var(--muted);
+  cursor: not-allowed; opacity: .7;
+}
+.room__btn--disabled:hover, .room__btn:disabled:hover { border-color: var(--line); color: var(--muted); }
 
 /* ---------- Shared spaces ---------- */
 .shared__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
