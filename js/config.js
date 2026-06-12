@@ -24,7 +24,7 @@ const SITE = {
       "Wi-Fi included",
       "Shared kitchen & lounge",
       "In-unit free laundry",
-      "Quiet, safe neighbourhood",
+      "Safe neighborhood",
       "Flexible move-in dates",
     ],
   },
@@ -45,8 +45,8 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
-        "Bright corner room with morning sun, a large wardrobe and a cozy " +
-        "reading nook by the window.",
+        "Spacious master bedroom with fireplace, 2 wardrobes, huge windows, " +
+        "and direct access to balcony and garden.",
       features: ["Double bed", "Work desk", "Wardrobe", "Lots of light"],
       photos: [
         "assets/images/rooms/room-1.svg",
