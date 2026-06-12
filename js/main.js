@@ -104,13 +104,13 @@
   function renderRooms() {
     const wrap = $("[data-rooms]");
 
-    // Group rooms by floor, then show floors in ascending order (Floor 1 first).
+    // Group rooms by floor, then show floors in descending order (Floor 2 first).
     const floors = {};
     SITE.rooms.forEach((room, i) => {
       const f = room.floor != null ? room.floor : "";
       (floors[f] = floors[f] || []).push({ room, i });
     });
-    const floorKeys = Object.keys(floors).sort((a, b) => Number(a) - Number(b));
+    const floorKeys = Object.keys(floors).sort((a, b) => Number(b) - Number(a));
 
     wrap.innerHTML = floorKeys.map((f) => {
       const cards = floors[f].map(({ room, i }) => roomCard(room, i)).join("");
