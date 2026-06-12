@@ -9,7 +9,7 @@ const SITE = {
   houseName: "Cedar Home",
   tagline: "A warm, cozy home — rooms for rent",
   location: "Your City, Country",
-  heroImage: "assets/images/hero.svg", // replace with assets/images/hero.jpg
+  heroImage: "assets/images/public/cover.png", // landing page background
 
   /* ---- About section ---- */
   about: {
