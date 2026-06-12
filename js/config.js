@@ -16,14 +16,14 @@ const SITE = {
     heading: "Welcome home",
     text:
       "A comfortable, light-filled house with private rooms and shared " +
-      "living spaces. Fully furnished, friendly neighbours, and everything " +
+      "living spaces. Fully furnished, safe neighborhood, and everything " +
       "you need to settle in from day one. Browse the rooms below — each " +
       "has its own price and photos — then send me a message.",
     highlights: [
       "Fully furnished rooms",
-      "Fast Wi-Fi included",
+      "Wi-Fi included",
       "Shared kitchen & lounge",
-      "Bills included",
+      "In-unit free laundry",
       "Quiet, safe neighbourhood",
       "Flexible move-in dates",
     ],
