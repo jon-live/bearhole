@@ -112,8 +112,8 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
-        "Spacious ground-floor room with an en-suite bathroom and direct " +
-        "access to the garden.",
+        "Spacious ground-floor room with an en-suite bathroom and a " +
+        "walk-in closet.",
       features: ["En-suite bathroom", "Queen bed", "Garden access"],
       photos: [
         "assets/images/rooms/room-5.svg",
