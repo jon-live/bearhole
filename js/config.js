@@ -6,9 +6,9 @@
 
 const SITE = {
   /* ---- Top of the page ---- */
-  houseName: "Cedar Home",
-  tagline: "A warm, cozy home — rooms for rent",
-  location: "Your City, Country",
+  houseName: "2387 Cedar St",
+  tagline: "A warm, spacious home, with rooms for rent in the Northside of Berkeley, walking distance to UC Berkeley",
+  location: "The Northside, Berkeley",
   heroImage: "assets/images/public/cover.png", // landing page background
 
   /* ---- About section ---- */
