@@ -65,10 +65,10 @@ const SITE = {
         "Cozy room with sloped ceiling, with access to balcony and garden.",
       features: ["Double bed", "Sloped ceiling", "Balcony & garden access"],
       photos: [
-        "assets/images/rooms/room-2.svg",
-        "assets/images/rooms/room-2.svg",
+        "assets/images/rooms/room2photo.png",
+        "assets/images/rooms/room2.png",
       ],
-      video: "",
+      video: "assets/videos/IMG_8422.mp4",
     },
     {
       name: "Room 3",
@@ -82,10 +82,10 @@ const SITE = {
         "working or meditation space.",
       features: ["Double bed", "Wardrobe", "Enclosed studio", "Work/meditation space"],
       photos: [
-        "assets/images/rooms/room-3.svg",
-        "assets/images/rooms/room-3.svg",
+        "assets/images/rooms/room3photo.png",
+        "assets/images/rooms/room3.png",
       ],
-      video: "",
+      video: "assets/videos/IMG_8431.mp4",
     },
     {
       name: "Room 4",
@@ -98,10 +98,10 @@ const SITE = {
         "Cozy upstairs room with wardrobe and huge windows for great value.",
       features: ["Double bed", "Wardrobe", "Huge windows", "Great value"],
       photos: [
-        "assets/images/rooms/room-4.svg",
-        "assets/images/rooms/room-4.svg",
+        "assets/images/rooms/room4photo.png",
+        "assets/images/rooms/room4.png",
       ],
-      video: "",
+      video: "assets/videos/IMG_8427.mp4",
     },
     {
       name: "Room 5",
@@ -115,10 +115,10 @@ const SITE = {
         "walk-in closet.",
       features: ["Double bed", "En-suite bathroom", "Walk-in closet", "Ground floor"],
       photos: [
-        "assets/images/rooms/room-5.svg",
-        "assets/images/rooms/room-5.svg",
+        "assets/images/rooms/room5photo.png",
+        "assets/images/rooms/room5.png",
       ],
-      video: "",
+      video: "assets/videos/IMG_8432.mp4",
     },
     {
       name: "Room 6",
@@ -132,8 +132,8 @@ const SITE = {
         "convenient and easy to settle into.",
       features: ["Double bed", "Near kitchen & living room", "Ground floor"],
       photos: [
-        "assets/images/rooms/room-6.svg",
-        "assets/images/rooms/room-6.svg",
+        "assets/images/rooms/room6photo.png",
+        "assets/images/rooms/room6.png",
       ],
       video: "",
     },
@@ -154,7 +154,7 @@ const SITE = {
   floorplan: {
     heading: "Floor plan",
     text: "See how the house is laid out.",
-    image: "assets/images/floorplan.svg", // replace with your plan image
+    image: "assets/images/public/floor_plans.png",
   },
 
   /* ---- CONTACT ---- */
