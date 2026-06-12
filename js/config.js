@@ -47,7 +47,7 @@ const SITE = {
       description:
         "Spacious master bedroom with fireplace, 2 wardrobes, huge windows, " +
         "and direct access to balcony and garden.",
-      features: ["Double bed", "Work desk", "Wardrobe", "Lots of light"],
+      features: ["Double bed", "Fireplace", "2 wardrobes", "Huge windows", "Balcony & garden access"],
       photos: [
         "assets/images/rooms/room-1.svg",
         "assets/images/rooms/room-1.svg",
@@ -63,7 +63,7 @@ const SITE = {
       beds: "1 double bed",
       description:
         "Cozy room with sloped ceiling, with access to balcony and garden.",
-      features: ["Garden view", "Single bed", "Built-in shelves"],
+      features: ["Double bed", "Sloped ceiling", "Balcony & garden access"],
       photos: [
         "assets/images/rooms/room-2.svg",
         "assets/images/rooms/room-2.svg",
@@ -80,7 +80,7 @@ const SITE = {
       description:
         "Huge room with a wardrobe and an enclosed studio for additional " +
         "working or meditation space.",
-      features: ["Double bed", "Study corner", "Wardrobe"],
+      features: ["Double bed", "Wardrobe", "Enclosed studio", "Work/meditation space"],
       photos: [
         "assets/images/rooms/room-3.svg",
         "assets/images/rooms/room-3.svg",
@@ -96,7 +96,7 @@ const SITE = {
       beds: "1 double bed",
       description:
         "Cozy upstairs room with wardrobe and huge windows for great value.",
-      features: ["Skylight", "Single bed", "Extra storage"],
+      features: ["Double bed", "Wardrobe", "Huge windows", "Great value"],
       photos: [
         "assets/images/rooms/room-4.svg",
         "assets/images/rooms/room-4.svg",
@@ -113,7 +113,7 @@ const SITE = {
       description:
         "Spacious ground-floor room with an en-suite bathroom and a " +
         "walk-in closet.",
-      features: ["En-suite bathroom", "Queen bed", "Garden access"],
+      features: ["Double bed", "En-suite bathroom", "Walk-in closet", "Ground floor"],
       photos: [
         "assets/images/rooms/room-5.svg",
         "assets/images/rooms/room-5.svg",
@@ -130,7 +130,7 @@ const SITE = {
       description:
         "Snug ground-floor room close to the kitchen and living room — " +
         "convenient and easy to settle into.",
-      features: ["Single bed", "Near kitchen", "Wardrobe"],
+      features: ["Double bed", "Near kitchen & living room", "Ground floor"],
       photos: [
         "assets/images/rooms/room-6.svg",
         "assets/images/rooms/room-6.svg",
