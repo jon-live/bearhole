@@ -71,7 +71,8 @@
       const photoCount = (room.photos || []).length;
       const hint = photoCount > 1
         ? `<span class="room__gallery-hint">⊞ ${photoCount} photos</span>` : "";
-      const galleryLabel = room.video ? "View photos &amp; video" : "View photos";
+      const videoBtn = room.video
+        ? `<button class="room__btn room__btn--solid" data-video="${i}">Video</button>` : "";
 
       return `
       <article class="room" data-reveal>
@@ -92,8 +93,9 @@
           <p class="room__desc">${esc(room.description)}</p>
           ${features ? `<ul class="room__features">${features}</ul>` : ""}
           <div class="room__actions">
-            <button class="room__btn" data-room-gallery="${i}">${galleryLabel}</button>
-            <a class="room__btn room__btn--solid" href="#contact" data-enquire="${esc(room.name)}">Enquire</a>
+            <button class="room__btn" data-room-gallery="${i}">Photos</button>
+            ${videoBtn}
+            <a class="room__btn ${videoBtn ? "" : "room__btn--solid"}" href="#contact" data-enquire="${esc(room.name)}">Enquire</a>
           </div>
         </div>
       </article>`;
@@ -120,13 +122,19 @@
       return `<div class="rooms__floor" data-reveal>${heading}<div class="rooms__grid">${cards}</div></div>`;
     }).join("");
 
-    // gallery openers (photos, then video if present)
+    // photo gallery openers
     $$("[data-room-gallery]").forEach((el) => {
       el.addEventListener("click", () => {
         const room = SITE.rooms[+el.getAttribute("data-room-gallery")];
-        const items = (room.photos || []).map((src) => ({ type: "image", src }));
-        if (room.video) items.push({ type: "video", src: room.video });
-        openLightbox(items, 0, room.name);
+        openLightbox((room.photos || []).map((src) => ({ type: "image", src })), 0, room.name);
+      });
+    });
+    // video openers
+    $$("[data-video]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const room = SITE.rooms[+el.getAttribute("data-video")];
+        openLightbox([{ type: "video", src: room.video }], 0, room.name);
       });
     });
     // enquire -> prefill form room field
