@@ -62,8 +62,7 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
-        "Cozy room overlooking the garden, with access to balcony and " +
-        "sloped ceiling.",
+        "Cozy room with sloped ceiling, with access to balcony and garden.",
       features: ["Garden view", "Single bed", "Built-in shelves"],
       photos: [
         "assets/images/rooms/room-2.svg",
