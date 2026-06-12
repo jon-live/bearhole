@@ -43,7 +43,7 @@ const SITE = {
       price: "$1,650",
       period: "/ month",
       status: "available",
-      beds: "1 full-size bed",
+      beds: "1 double bed",
       description:
         "Bright corner room with morning sun, a large wardrobe and a cozy " +
         "reading nook by the window.",
@@ -60,7 +60,7 @@ const SITE = {
       price: "$1,450",
       period: "/ month",
       status: "available",
-      beds: "1 full-size bed",
+      beds: "1 double bed",
       description:
         "Quiet room overlooking the garden. Perfect for a student or anyone " +
         "who loves a calm, green view.",
@@ -77,7 +77,7 @@ const SITE = {
       price: "$1,650",
       period: "/ month",
       status: "available",
-      beds: "1 full-size bed",
+      beds: "1 double bed",
       description:
         "Comfortable room with a generous wardrobe and a dedicated study " +
         "corner — great for working from home.",
@@ -94,7 +94,7 @@ const SITE = {
       price: "$1,450",
       period: "/ month",
       status: "available",
-      beds: "1 full-size bed",
+      beds: "1 double bed",
       description:
         "Cozy upstairs room with sloped ceilings and a skylight — peaceful " +
         "and full of character.",
@@ -111,7 +111,7 @@ const SITE = {
       price: "$1,450",
       period: "/ month",
       status: "available",
-      beds: "1 full-size bed",
+      beds: "1 double bed",
       description:
         "Spacious ground-floor room with an en-suite bathroom and direct " +
         "access to the garden.",
@@ -128,7 +128,7 @@ const SITE = {
       price: "$1,450",
       period: "/ month",
       status: "rented",
-      beds: "1 full-size bed",
+      beds: "1 double bed",
       description:
         "Snug ground-floor room close to the kitchen and living room — " +
         "convenient and easy to settle into.",
