@@ -49,10 +49,10 @@ const SITE = {
         "and direct access to balcony and garden.",
       features: ["Double bed", "Fireplace", "2 wardrobes", "Huge windows", "Balcony & garden access"],
       photos: [
-        "assets/images/rooms/room-1.svg",
-        "assets/images/rooms/room-1.svg",
+        "assets/images/rooms/room1photo.png",
+        "assets/images/rooms/room1.png",
       ],
-      video: "", // e.g. "https://www.youtube.com/watch?v=XXXX" or "assets/videos/room1.mp4"
+      video: "assets/videos/IMG_8425.mp4",
     },
     {
       name: "Room 2",
