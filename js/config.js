@@ -125,7 +125,7 @@ const SITE = {
     {
       name: "Room 6",
       floor: 1,
-      price: "$1,450",
+      price: "$1,250",
       period: "/ month",
       status: "rented",
       beds: "1 double bed",
