@@ -62,8 +62,8 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
-        "Quiet room overlooking the garden. Perfect for a student or anyone " +
-        "who loves a calm, green view.",
+        "Cozy room overlooking the garden, with access to balcony and " +
+        "sloped ceiling.",
       features: ["Garden view", "Single bed", "Built-in shelves"],
       photos: [
         "assets/images/rooms/room-2.svg",
