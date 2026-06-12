@@ -173,7 +173,7 @@ const SITE = {
       "get back to you soon.",
     // Where the contact form sends to. Also shown on the page so visitors can
     // copy it and email manually (showEmailLink: true).
-    email: "sepahope@berkeley.edu",
+    email: "ljonathon666@gmail.com",
     showEmailLink: true, // set false to hide the address from the page
     phone: "", // optional, e.g. "+1 555 123 4567" — leave "" to hide
     // To make the form actually send email, create a free form at
