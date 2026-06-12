@@ -144,9 +144,9 @@ const SITE = {
     heading: "Shared spaces",
     text: "Spaces everyone enjoys together.",
     items: [
-      { title: "Living room", photo: "assets/images/public/public-1.svg" },
-      { title: "Kitchen", photo: "assets/images/public/public-2.svg" },
-      { title: "Garden & patio", photo: "assets/images/public/public-3.svg" },
+      { title: "Balcony", photo: "assets/images/public/balcony.png" },
+      { title: "Kitchen", photo: "assets/images/public/kitchen.png" },
+      { title: "Garden", photo: "assets/images/public/garden.png" },
     ],
   },
 
