@@ -125,11 +125,13 @@
       return `<div class="rooms__floor" data-reveal>${heading}<div class="rooms__grid">${cards}</div></div>`;
     }).join("");
 
-    // photo gallery openers
+    // photo gallery openers (photos first, video appended at the end if present)
     $$("[data-room-gallery]").forEach((el) => {
       el.addEventListener("click", () => {
         const room = SITE.rooms[+el.getAttribute("data-room-gallery")];
-        openLightbox((room.photos || []).map((src) => ({ type: "image", src })), 0, room.name);
+        const slides = (room.photos || []).map((src) => ({ type: "image", src }));
+        if (room.video) slides.push({ type: "video", src: room.video });
+        openLightbox(slides, 0, room.name);
       });
     });
     // video openers
