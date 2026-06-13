@@ -19,8 +19,8 @@
   --radius:     20px;
   --radius-sm:  12px;
   --maxw:       1140px;
-  --serif: "Fraunces", Georgia, serif;
-  --sans:  "Nunito", system-ui, sans-serif;
+  --serif: "Sora", system-ui, sans-serif;
+  --sans:  "Inter", system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,8 +31,9 @@ body {
   font-family: var(--sans);
   color: var(--ink);
   background: var(--cream);
-  line-height: 1.65;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img { max-width: 100%; display: block; }
@@ -101,7 +102,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero__content { position: relative; z-index: 2; color: #fff; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; width: 100%; }
 .hero__eyebrow { text-transform: uppercase; letter-spacing: 3px; font-size: .8rem; font-weight: 700; opacity: .9; margin-bottom: 1rem; }
-.hero__title { font-family: var(--serif); font-weight: 600; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.02; margin-bottom: 1rem; }
+.hero__title { font-family: var(--serif); font-weight: 700; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.04; letter-spacing: -.02em; margin-bottom: 1rem; }
 .hero__tagline { font-size: clamp(1.05rem, 2vw, 1.4rem); max-width: 30ch; opacity: .95; margin-bottom: 2rem; }
 .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero__scroll {
@@ -116,7 +117,7 @@ a { color: inherit; text-decoration: none; }
 .section--alt { background: var(--beige-soft); }
 .section__head { text-align: center; max-width: 620px; margin: 0 auto clamp(36px, 5vw, 60px); }
 .section__eyebrow { text-transform: uppercase; letter-spacing: 2.5px; font-size: .78rem; font-weight: 700; color: var(--terracotta); margin-bottom: .6rem; }
-.section__title { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.1; }
+.section__title { font-family: var(--serif); font-weight: 700; font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.12; letter-spacing: -.02em; }
 .section__sub { color: var(--muted); margin-top: .8rem; font-size: 1.05rem; }
 
 /* ---------- About ---------- */
