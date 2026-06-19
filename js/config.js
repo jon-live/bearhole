@@ -21,8 +21,8 @@ const SITE = {
       "has its own price and photos — then send me a message.",
     highlights: [
       "Fully furnished rooms",
-      "Wi-Fi included",
-      "Shared kitchen & lounge",
+      "Wi-Fi provided",
+      "Huge kitchen & lounge",
       "In-unit free laundry",
       "Safe neighborhood",
       "Flexible move-in dates",
