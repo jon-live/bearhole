@@ -69,8 +69,12 @@
       const features = (room.features || [])
         .map((f) => `<li>${esc(f)}</li>`).join("");
       const photoCount = (room.photos || []).length;
-      const hint = photoCount > 1
-        ? `<span class="room__gallery-hint">⊞ ${photoCount} photos</span>` : "";
+      const videoCount = room.video ? 1 : 0;
+      const hintParts = [];
+      if (photoCount > 0) hintParts.push(`${photoCount} image${photoCount > 1 ? "s" : ""}`);
+      if (videoCount > 0) hintParts.push(`${videoCount} video`);
+      const hint = hintParts.length
+        ? `<span class="room__gallery-hint">⊞ ${hintParts.join(", ")}</span>` : "";
       const videoBtn = room.video
         ? `<button class="room__btn" data-video="${i}">Video</button>` : "";
       const enquireBtn = available
