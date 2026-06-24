@@ -63,9 +63,12 @@
       }
 
       const available = status !== "rented";
-      const badge = available
-        ? `<span class="room__badge room__badge--available">Available</span>`
-        : `<span class="room__badge room__badge--rented">Rented</span>`;
+      const badge =
+        status === "pending"
+          ? `<span class="room__badge room__badge--pending">Pending</span>`
+          : available
+          ? `<span class="room__badge room__badge--available">Available</span>`
+          : `<span class="room__badge room__badge--rented">Rented</span>`;
       const features = (room.features || [])
         .map((f) => `<li>${esc(f)}</li>`).join("");
       const photoCount = (room.photos || []).length;

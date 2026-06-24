@@ -59,7 +59,7 @@ const SITE = {
       floor: 2,
       price: "$1,450",
       period: "/ month",
-      status: "available",
+      status: "pending",
       beds: "1 double bed",
       description:
         "Cozy room with sloped ceiling, with access to balcony and garden.",
