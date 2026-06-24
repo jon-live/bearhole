@@ -133,7 +133,6 @@ const SITE = {
       status: "rented",
       beds: "1 double bed",
       description:
-        "Available starting Aug 1st 2026. " +
         "Snug ground-floor room close to the kitchen and living room — " +
         "convenient and easy to settle into.",
       features: ["Double bed", "Near kitchen & living room", "Ground floor"],
