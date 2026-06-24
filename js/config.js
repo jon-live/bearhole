@@ -45,6 +45,7 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
+        "Available starting Aug 1st 2026. " +
         "Spacious master bedroom with fireplace, 2 wardrobes, huge windows, " +
         "and direct access to balcony and garden.",
       features: ["Double bed", "Fireplace", "2 wardrobes", "Huge windows", "Balcony & garden access"],
@@ -62,6 +63,7 @@ const SITE = {
       status: "pending",
       beds: "1 double bed",
       description:
+        "Available starting Aug 1st 2026. " +
         "Cozy room with sloped ceiling, with access to balcony and garden.",
       features: ["Double bed", "Sloped ceiling", "Balcony & garden access"],
       photos: [
@@ -78,6 +80,7 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
+        "Available starting Aug 1st 2026. " +
         "Huge room with a wardrobe and an enclosed studio for additional " +
         "working or meditation space.",
       features: ["Double bed", "Wardrobe", "Enclosed studio", "Work/meditation space"],
@@ -95,6 +98,7 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
+        "Available starting Aug 1st 2026. " +
         "Cozy upstairs room with wardrobe and huge windows for great value.",
       features: ["Double bed", "Wardrobe", "Huge windows", "Great value"],
       photos: [
@@ -111,6 +115,7 @@ const SITE = {
       status: "available",
       beds: "1 double bed",
       description:
+        "Available starting Aug 16th 2026. " +
         "Spacious ground-floor room with an en-suite bathroom and a " +
         "walk-in closet.",
       features: ["Double bed", "En-suite bathroom", "Walk-in closet", "Ground floor"],
@@ -128,6 +133,7 @@ const SITE = {
       status: "rented",
       beds: "1 double bed",
       description:
+        "Available starting Aug 1st 2026. " +
         "Snug ground-floor room close to the kitchen and living room — " +
         "convenient and easy to settle into.",
       features: ["Double bed", "Near kitchen & living room", "Ground floor"],
