@@ -60,7 +60,7 @@ const SITE = {
       floor: 2,
       price: "$1,450",
       period: "/ month",
-      status: "pending",
+      status: "rented",
       beds: "1 double bed",
       description:
         "Available starting Aug 1st 2026. " +
