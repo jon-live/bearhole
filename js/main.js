@@ -184,6 +184,86 @@
       openLightbox([{ type: "image", src: SITE.floorplan.image, caption: "Floor plan" }], 0));
   }
 
+  /* ---------- Book a tour ---------- */
+  function renderTour() {
+    const t = SITE.tour;
+    if (!t) return;
+
+    $("[data-tour-heading]").textContent = t.heading;
+    $("[data-tour-text]").textContent = t.text;
+    $("[data-tour-date]").textContent = t.date;
+
+    const slotsWrap = $("[data-tour-slots]");
+    slotsWrap.innerHTML = (t.slots || []).map((s, i) =>
+      `<button type="button" class="tour__slot" data-tour-slot="${i}">${esc(s)}</button>`
+    ).join("");
+
+    const methodsWrap = $("[data-tour-methods]");
+    methodsWrap.innerHTML = (t.methods || []).map((m, i) =>
+      `<label class="tour__method">
+         <input type="radio" name="method" value="${esc(m)}" ${i === 0 ? "checked" : ""} />
+         <span>${esc(m)}</span>
+       </label>`
+    ).join("");
+
+    const form = $("#tourForm");
+    const selectedLabel = $("[data-tour-selected]");
+    const status = $("[data-tour-status]");
+    let selectedSlot = "";
+
+    $$("[data-tour-slot]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        $$("[data-tour-slot]").forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        selectedSlot = t.slots[+btn.getAttribute("data-tour-slot")];
+        selectedLabel.textContent = selectedSlot;
+        form.hidden = false;
+        status.className = "contact__status";
+        status.textContent = "";
+        form.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      status.className = "contact__status";
+      status.textContent = "";
+
+      if (!selectedSlot) {
+        status.classList.add("is-err");
+        status.textContent = "Please pick a time slot first.";
+        return;
+      }
+
+      const fd = new FormData(form);
+      const name = fd.get("name");
+      const email = fd.get("email");
+      const method = fd.get("method");
+      const to = t.bookingEmail;
+
+      const subject = encodeURIComponent(`Tour booking — ${t.date}, ${selectedSlot}`);
+      const body = encodeURIComponent(
+        "New tour booking request:\n\n" +
+        `Date: ${t.date}\n` +
+        `Time: ${selectedSlot}\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Preferred touring method: ${method}\n`
+      );
+      const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(to) + "&su=" + subject + "&body=" + body;
+      const mailtoUrl = `mailto:${to}?subject=${subject}&body=${body}`;
+
+      // Static site (no server): open the Gmail composer prefilled with the
+      // tour details, ready to send to the booking address.
+      window.open(gmailUrl, "_blank", "noopener");
+      status.classList.add("is-ok");
+      status.innerHTML =
+        `Opening your email to confirm your tour on ${esc(t.date)} at ${esc(selectedSlot)}… ` +
+        `Prefer your own email app? <a href="${mailtoUrl}">Open it instead</a>.`;
+    });
+  }
+
   /* ---------- Contact ---------- */
   function renderContact() {
     const c = SITE.contact;
@@ -360,6 +440,7 @@
     renderRooms();
     renderShared();
     renderFloorplan();
+    renderTour();
     renderContact();
     initNav();
     initReveal();

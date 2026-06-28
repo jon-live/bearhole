@@ -162,6 +162,33 @@ const SITE = {
     image: "assets/images/public/floor_plans.png",
   },
 
+  /* ---- BOOK A TOUR ----
+     Visitors pick a time slot, enter their name/email/touring method, and
+     click "Book a tour". A confirmation email (with the slot + their details)
+     is opened, addressed to bookingEmail, ready to send.                    */
+  tour: {
+    heading: "Book a tour",
+    text:
+      "Pick a time that works for you, share a few details, and click " +
+      "“Book a tour” to confirm — I'll receive your request by email.",
+    date: "July 2nd, 2026",
+    // Tour booking requests are sent to this address.
+    bookingEmail: "sepahope@berkeley.edu",
+    // Available time slots (Pacific Time).
+    slots: [
+      "2:00pm – 2:30pm PST",
+      "2:30pm – 3:00pm PST",
+      "3:30pm – 4:00pm PST",
+      "4:00pm – 4:30pm PST",
+    ],
+    // Ways a visitor can choose to tour.
+    methods: [
+      "In-person tour",
+      "Google Meet virtual tour",
+      "WeChat virtual tour",
+    ],
+  },
+
   /* ---- CONTACT ---- */
   contact: {
     heading: "Get in touch",
