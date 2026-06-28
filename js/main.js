@@ -193,10 +193,30 @@
     $("[data-tour-text]").textContent = t.text;
     $("[data-tour-date]").textContent = t.date;
 
+    // Slots already booked from this browser are remembered so they stay
+    // greyed out and unclickable after the email is sent (and on reload).
+    const bookedKey = `tourBooked:${t.date}`;
+    const loadBooked = () => {
+      try { return new Set(JSON.parse(localStorage.getItem(bookedKey) || "[]")); }
+      catch (_) { return new Set(); }
+    };
+    const saveBooked = (set) => {
+      try { localStorage.setItem(bookedKey, JSON.stringify([...set])); } catch (_) {}
+    };
+    const booked = loadBooked();
+
     const slotsWrap = $("[data-tour-slots]");
-    slotsWrap.innerHTML = (t.slots || []).map((s, i) =>
-      `<button type="button" class="tour__slot" data-tour-slot="${i}">${esc(s)}</button>`
-    ).join("");
+    const renderSlots = () => {
+      slotsWrap.innerHTML = (t.slots || []).map((s, i) => {
+        const isBooked = booked.has(s);
+        return `<button type="button"
+          class="tour__slot${isBooked ? " tour__slot--booked" : ""}"
+          data-tour-slot="${i}"${isBooked ? " disabled aria-disabled=\"true\"" : ""}>
+          <span>${esc(s)}</span>${isBooked ? `<span class="tour__slot-tag">Booked</span>` : ""}
+        </button>`;
+      }).join("");
+    };
+    renderSlots();
 
     const methodsWrap = $("[data-tour-methods]");
     methodsWrap.innerHTML = (t.methods || []).map((m, i) =>
@@ -211,18 +231,22 @@
     const status = $("[data-tour-status]");
     let selectedSlot = "";
 
-    $$("[data-tour-slot]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        $$("[data-tour-slot]").forEach((b) => b.classList.remove("is-active"));
-        btn.classList.add("is-active");
-        selectedSlot = t.slots[+btn.getAttribute("data-tour-slot")];
-        selectedLabel.textContent = selectedSlot;
-        form.hidden = false;
-        status.className = "contact__status";
-        status.textContent = "";
-        form.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    const bindSlots = () => {
+      $$("[data-tour-slot]").forEach((btn) => {
+        if (btn.disabled) return;
+        btn.addEventListener("click", () => {
+          $$("[data-tour-slot]").forEach((b) => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          selectedSlot = t.slots[+btn.getAttribute("data-tour-slot")];
+          selectedLabel.textContent = selectedSlot;
+          form.hidden = false;
+          status.className = "contact__status";
+          status.textContent = "";
+          form.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
       });
-    });
+    };
+    bindSlots();
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -257,10 +281,22 @@
       // Static site (no server): open the Gmail composer prefilled with the
       // tour details, ready to send to the booking address.
       window.open(gmailUrl, "_blank", "noopener");
+
+      // Mark this slot as booked: grey it out, make it unclickable, remember it.
+      booked.add(selectedSlot);
+      saveBooked(booked);
+      renderSlots();
+      bindSlots();
+
       status.classList.add("is-ok");
       status.innerHTML =
-        `Opening your email to confirm your tour on ${esc(t.date)} at ${esc(selectedSlot)}… ` +
+        `Your tour on ${esc(t.date)} at ${esc(selectedSlot)} is now marked as booked. ` +
+        `Opening your email to confirm… ` +
         `Prefer your own email app? <a href="${mailtoUrl}">Open it instead</a>.`;
+
+      selectedSlot = "";
+      form.reset();
+      form.hidden = true;
     });
   }
 
