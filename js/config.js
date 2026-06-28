@@ -179,7 +179,6 @@ const SITE = {
       "2:00pm – 2:30pm PST",
       "2:30pm – 3:00pm PST",
       "3:30pm – 4:00pm PST",
-      "4:00pm – 4:30pm PST",
     ],
     // Ways a visitor can choose to tour.
     methods: [
