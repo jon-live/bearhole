@@ -32,7 +32,6 @@
         <a href="#rooms">Rooms</a>
         <a href="#shared">Shared spaces</a>
         <a href="#floorplan">Floor plan</a>
-        <a href="#tour">Book a tour</a>
         <a href="#contact" class="nav__cta">Contact</a>
       </nav>
     </div>
@@ -128,40 +127,6 @@
         <button type="submit" class="btn btn--primary btn--block">Send message</button>
         <p class="contact__status" data-form-status></p>
       </form>
-    </div>
-  </section>
-
-  <!-- ===== Book a tour ===== -->
-  <section class="section section--alt tour" id="tour">
-    <div class="container">
-      <header class="section__head">
-        <p class="section__eyebrow">Come see it</p>
-        <h2 class="section__title" data-tour-heading></h2>
-        <p class="section__sub" data-tour-text></p>
-      </header>
-      <div class="tour__layout">
-        <div class="tour__slots">
-          <h3 class="tour__date" data-tour-date></h3>
-          <div class="tour__slot-grid" data-tour-slots></div>
-        </div>
-        <form class="tour__form contact__form" id="tourForm" hidden>
-          <p class="tour__selected">Selected slot: <strong data-tour-selected></strong></p>
-          <label>
-            <span>Your name</span>
-            <input type="text" name="name" required placeholder="Jane Doe" />
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" name="email" required placeholder="you@email.com" />
-          </label>
-          <fieldset class="tour__methods">
-            <legend>Preferred touring method</legend>
-            <div data-tour-methods></div>
-          </fieldset>
-          <button type="submit" class="btn btn--primary btn--block">Book a tour</button>
-          <p class="contact__status" data-tour-status></p>
-        </form>
-      </div>
     </div>
   </section>
 
